@@ -54,7 +54,7 @@ const MessageInput = () => {
         setMessage('');
       }}
       onKeyDown={(e) => {
-        if (e.key === 'Enter' && !e.shiftKey && !loading) {
+        if (e.key === 'Enter' && !e.shiftKey && !loading && !e.nativeEvent.isComposing) {
           e.preventDefault();
           sendMessage(message);
           setMessage('');
